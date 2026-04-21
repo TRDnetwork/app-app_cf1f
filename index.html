@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>window.__SUPABASE_URL__="https://wmxnwapnfurwoalvkkwh.supabase.co";window.__SUPABASE_ANON_KEY__="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndteG53YXBuZnVyd29hbHZra3doIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5MDgwODEsImV4cCI6MjA5MTQ4NDA4MX0.BNgF4LD35_Ooxtkv5Pok8ldrBeHPOCDauv-ZYG1v7_Q";</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dawn Brew</title>
+  <meta name="description" content="Hand-roasted coffee from Karnal, opening Summer 2026. Sign up for updates on our artisanal brews and launch details."/>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A1628;
+      --surface: #112238;
+      --text: #F5E6D3;
+      --text-dim: #B8A594;
+      --accent: #D97706;
+      --accent-alt: #C2410C;
+      --border: #2A3B50;
+      --success: #166534;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    header {
+      text-align: center;
+      padding: 6rem 0 4rem;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--text-dim);
+      margin-top: 0.5rem;
+    }
+    .form-group {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input[type="email"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      color: var(--text);
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    input[type="email"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      background-color: var(--accent);
+      color: var(--text);
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: var(--accent-alt);
+      transform: scale(1.02);
+    }
+    .message {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.4s ease;
+    }
+    .message.success {
+      color: #86EFAC;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    main {
+      padding: 2rem 0;
+    }
+    section {
+      margin: 4rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      font-size: 1.75rem;
+      color: var(--accent);
+      text-align: center;
+    }
+    .section-content {
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      color: var(--text-dim);
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 4rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+    .social-links {
+      margin: 1.5rem 0;
+    }
+    .social-links a {
+      color: var(--text);
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: var(--accent);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Dawn Brew</h1>
+      <p class="tagline">Hand-Roasted Coffee, Coming Summer 2026</p>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Enter your email for updates" aria-label="Email address">
+        <button id="submit-btn">Notify Me</button>
+        <div id="message" class="message">Thanks! We'll keep you posted.</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="origin">
+      <h2 class="section-title">Our Origin</h2>
+      <p class="section-content">
+        We source only the finest beans from small farms committed to sustainable practices. 
+        Each batch is hand-selected to ensure rich flavor and ethical integrity.
+      </p>
+    </section>
+
+    <section id="brewing">
+      <h2 class="section-title">The Craft of Brewing</h2>
+      <p class="section-content">
+        Roasted in small batches with precision and care, our coffee honors the bean’s natural character. 
+        From first crack to final cool, every step is guided by passion and patience.
+      </p>
+    </section>
+
+    <section id="location">
+      <h2 class="section-title">Karnal, Our Home</h2>
+      <p class="section-content">
+        Nestled in the heart of Karnal, our upcoming café will be a sanctuary for slow mornings and deep conversations. 
+        Opening Summer 2026 — a new chapter in local craft.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://instagram.com/dawnbrew" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com/dawnbrew" target="_blank" rel="noopener">Twitter</a>
+    </div>
+    <p>&copy; <span id="year">2025</span> Dawn Brew. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
